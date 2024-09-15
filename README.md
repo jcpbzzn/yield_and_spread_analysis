@@ -39,7 +39,7 @@ Where:
 - v = days between the settlement of the trade and the next coupon divided by the number of days in the coupon period.
 - F = Face value of the bond
 
-The accrued interest is calculated as follows:
+The accrued interest is calculated as follows [Saunders, Cornett, and Erhemjamts (2012)](#saunders2012):
 
 $$
 \text{Accrued Interest} = \frac{\text{Annual Coupon Payment}}{f} \cdot \frac{\text{Days Since Last Coupon}}{\text{Days in Coupon Period}}
@@ -47,4 +47,5 @@ $$
 
 ## References
 
-<a id="boyles2005"></a>Boyles, G. V., Secrest, T. W., & Burney, R. B. (2005). The Pricing of Bonds between Coupon Payments: From Theory to Market Practice. *Journal of Economics and Finance Education*, 4(2), 61.
+- <a id="boyles2005"></a>Boyles, G. V., Secrest, T. W., & Burney, R. B. (2005). The Pricing of Bonds between Coupon Payments: From Theory to Market Practice. *Journal of Economics and Finance Education*, 4(2), 61.
+- <a id="saunders2012"></a>Saunders, A., Cornett, M. M., & Erhemjamts, O. (2012). *Financial markets and institutions*. McGraw-Hill/Irwin.
