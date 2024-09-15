@@ -50,7 +50,7 @@ $$
 \text{Clean Price} = \text{Dirty Price} - \text{Accrued Interest} 
 $$
 
-Bond *DV01* is calculated by bumping the bond yield by 1 basis point:
+Bond *DV01* is calculated by bumping the bond yield by 1 basis point [Tuckman and Serrat (2022)](#tuckman2022):
 
 $$
 \text{DV01} = \frac{P_{YTM-1} - P_{YTM+1}}{2}
@@ -72,3 +72,4 @@ $$
 
 - <a id="boyles2005"></a>Boyles, G. V., Secrest, T. W., & Burney, R. B. (2005). The Pricing of Bonds between Coupon Payments: From Theory to Market Practice. *Journal of Economics and Finance Education*, 4(2), 61.
 - <a id="saunders2012"></a>Saunders, A., Cornett, M. M., & Erhemjamts, O. (2012). *Financial markets and institutions*. McGraw-Hill/Irwin.
+- <a id="tuckman2022"></a>Tuckman, B., & Serrat, A. (2022). *Fixed income securities: tools for today's markets*. John Wiley & Sons.
