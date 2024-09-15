@@ -25,7 +25,7 @@ Where:
 To allow pricing in between coupon payment dates, we use the following formula [Boyles, Secrest, and Burney (2005)](#boyles2005):
 
 $$
-P = \sum_{t=1}^{T \cdot f} \frac{C/f}{(1+r/f)^{v \cdot f} \cdot (1 + r/f)^{(t-1) \cdot f}} + \frac{F}{(1+r/f)^{v \cdot f} \cdot (1 + r/f)^{(n-1) \cdot f}}
+P = \sum_{t=1}^{T \cdot f} \frac{C/f}{(1+r/f)^{v \cdot f} \cdot (1 + r/f)^{(t-1) \cdot f}} + \frac{F}{(1+r/f)^{v \cdot f} \cdot (1 + r/f)^{(T-1) \cdot f}}
 $$
 
 Where:
@@ -35,7 +35,6 @@ Where:
 - r = Discount rate or yield to maturity
 - t = Period
 - T = Total number of periods until maturity
-- n = total number of remaining years
 - v = days between the settlement of the trade and the next coupon divided by the number of days in the coupon period.
 - F = Face value of the bond
 
