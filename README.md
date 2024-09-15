@@ -7,7 +7,7 @@ The purpose is not only to provide a useful bond math calculator, but also to pr
 
 ## Bond Math
 
-The bond price P on a coupon payment date can be calculated using the following formula:
+The bond clean price P on a coupon payment date can be calculated using the following formula:
 
 $$
 P = \sum_{t=1}^{T \cdot f} \frac{C/f}{(1 + r/f)^{t \cdot f}} + \frac{F}{(1 + r/f)^{T \cdot f}}
@@ -22,7 +22,7 @@ Where:
 - T = Total number of periods until maturity
 - F = Face value of the bond
 
-To allow pricing in between coupon payment dates, we use the following formula:
+To allow pricing in between coupon payment dates, we use the following formula [Boyles, Secrest, and Burney (2005)](#boyles2005):
 
 $$
 P = \sum_{t=1}^{T \cdot f} \frac{C/f}{(1+r/f)^{v \cdot f} \cdot (1 + r/f)^{(t-1) \cdot f}} + \frac{F}{(1+r/f)^{v \cdot f} \cdot (1 + r/f)^{(n-1) \cdot f}}
@@ -38,3 +38,13 @@ Where:
 - n = total number of remaining years
 - v = days between the settlement of the trade and the next coupon divided by the number of days in the coupon period.
 - F = Face value of the bond
+
+The accrued interest is calculated as follows:
+
+$$
+\text{Accrued Interest} = \frac{\text{Annual Coupon Payment}}{f} \cdot \frac{\text{Days Since Last Coupon}}{\text{Days in Coupon Period}}
+$$
+
+## References
+
+<a id="boyles2005"></a>Boyles, G. V., Secrest, T. W., & Burney, R. B. (2005). The Pricing of Bonds between Coupon Payments: From Theory to Market Practice. *Journal of Economics and Finance Education*, 4(2), 61.
