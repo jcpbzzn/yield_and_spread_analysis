@@ -7,7 +7,7 @@ The purpose is not only to provide a useful bond math calculator, but also to pr
 
 ## Bond Math
 
-The bond clean price P on a coupon payment date can be calculated using the following formula:
+The bond *Dirty Price* P on a coupon payment date can be calculated using the following formula:
 
 $$
 P = \sum_{t=1}^{T \cdot f} \frac{C/f}{(1 + r/f)^{t \cdot f}} + \frac{F}{(1 + r/f)^{T \cdot f}}
@@ -22,7 +22,7 @@ Where:
 - T = Total number of periods until maturity
 - F = Face value of the bond
 
-To allow pricing in between coupon payment dates, we use the following formula [Boyles, Secrest, and Burney (2005)](#boyles2005):
+To allow pricing in between coupon payment dates, we use the following formula the *Dirty Price* [Boyles, Secrest, and Burney (2005)](#boyles2005):
 
 $$
 P = \sum_{t=1}^{T \cdot f} \frac{C/f}{(1+r/f)^{v \cdot f} \cdot (1 + r/f)^{(t-1) \cdot f}} + \frac{F}{(1+r/f)^{v \cdot f} \cdot (1 + r/f)^{(T-1) \cdot f}}
@@ -38,10 +38,34 @@ Where:
 - v = days between the settlement of the trade and the next coupon divided by the number of days in the coupon period.
 - F = Face value of the bond
 
-The accrued interest is calculated as follows [Saunders, Cornett, and Erhemjamts (2012)](#saunders2012):
+The *Accrued Interest* is calculated as follows [Saunders, Cornett, and Erhemjamts (2012)](#saunders2012):
 
 $$
 \text{Accrued Interest} = \frac{\text{Annual Coupon Payment}}{f} \cdot \frac{\text{Days Since Last Coupon}}{\text{Days in Coupon Period}}
+$$
+
+The bond *Clean Price*, which is the price bonds are usually quoted at, is computed as:
+
+$$
+\text{Clean Price} = \text{Dirty Price} - \text{Accrued Interest} 
+$$
+
+Bond *DV01* is calculated by bumping the bond yield by 1 basis point:
+
+$$
+\text{DV01} = \frac{P_{YTM-1} - P_{YTM+1}}{2}
+$$
+
+From the DV01, we can easily calculate the *Modified Duration* as:
+
+$$
+\text{Modified Duration} = \frac{\text{DV01} \cdot 100}{\text{Clean Price}}
+$$
+
+The *Macaulay Duration* can be derived from the Modified Duration as follows:
+
+$$
+\text{Macaulay Duration} = \text{Modified Duration} \cdot (1 + YTM/f)
 $$
 
 ## References
